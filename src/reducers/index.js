@@ -18,26 +18,27 @@ const initialState = {
   ],
 };
 
-function reducer(TODO = initialState, action) {
+function reducer(state = initialState, action) {
   switch (action.type) {
     case CREATE_TODO_ITEM:
+      console.log(action.payload);
       return {
-        ...TODO,
-        TODO: [...TODO, action.payload],
+        ...state,
+        TODO: [...state.TODO, action.payload],
       };
     //Pretend => body {id, task, complete}
     case UPDATE_TODO_ITEM:
       return {
-        ...TODO,
+        ...state,
         TODO: [], //in a min
       };
     case DELETE_TODO_ITEM:
       return {
-        ...TODO,
+        ...state,
         TODO: [], //logic
       };
     default:
-      return TODO;
+      return state;
   }
 }
 

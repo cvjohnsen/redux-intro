@@ -5,6 +5,7 @@ export const DELETE_TODO_ITEM = "DELETE_TODO_ITEM";
 //Actions are Pure Functions
 
 export const createTodo = (item) => (dispatch) => {
+  console.log(item);
   dispatch({ type: CREATE_TODO_ITEM, payload: item });
 };
 
